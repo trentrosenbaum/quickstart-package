@@ -54,6 +54,66 @@ ruff format .
 mypy src
 ```
 
+## Building the Package
+
+To build distribution packages (wheel and source distribution):
+
+```bash
+# Install the build tool
+uv pip install build
+
+# Build the package
+python -m build
+```
+
+This creates two files in the `dist/` directory:
+- `quickstart_package-0.1.0-py3-none-any.whl` (wheel)
+- `quickstart_package-0.1.0.tar.gz` (source distribution)
+
+## Installing the Built Package
+
+### From a wheel file
+
+```bash
+pip install dist/quickstart_package-0.1.0-py3-none-any.whl
+```
+
+Or with uv:
+
+```bash
+uv pip install dist/quickstart_package-0.1.0-py3-none-any.whl
+```
+
+### Usage
+
+Once installed, you can use the package in your Python code:
+
+```python
+from quickstart_package import hello, goodbye
+
+# Greet someone
+print(hello())          # Output: Hello, World!
+print(hello("Python"))  # Output: Hello, Python!
+
+# Say goodbye
+print(goodbye())          # Output: Goodbye, World!
+print(goodbye("Python"))  # Output: Goodbye, Python!
+```
+
+### Uninstalling
+
+To remove the installed package:
+
+```bash
+pip uninstall quickstart-package
+```
+
+Or with uv:
+
+```bash
+uv pip uninstall quickstart-package
+```
+
 ## Project Structure
 
 ```
