@@ -1,4 +1,4 @@
-"   ""Quickstart package template."""
+"Quickstart package template."
 
 __version__ = "0.1.0"
 
